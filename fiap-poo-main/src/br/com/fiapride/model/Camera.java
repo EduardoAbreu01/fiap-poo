@@ -3,41 +3,69 @@ package br.com.fiapride.model;
 import java.util.Scanner;
 
 public class Camera {
-    public int resolucao;
-    public int capacidade;
-    public String conectividade;
+    private int resolucao;
+    private int capacidade;
+    private String conectividade;
 
 
-    public Camera(int resolucao,int capacidade, String conectividade){
-        this.resolucao = resolucao;
+    public Camera(int capacidade, String conectividade){
+        this.resolucao = 0;
         this.capacidade = capacidade;
         this.conectividade = conectividade;
     }
 
     public void limparHd(){
         System.out.println("Limpando nuvem...");
-        this.capacidade = 500;
-        System.out.println("Capacidade Atual: " + this.capacidade);
+        setCapacidade(500);
+        System.out.println("Capacidade Atual: " + getCapacidade());
     }
 
     public void comecarFilmagem() throws InterruptedException {
         System.out.println("Começando a filmagem...");
 
         while (this.capacidade > 0){
-            System.out.println("Filmando... Capacidade atual: " + this.capacidade);
+            System.out.println("Filmando... Capacidade atual: " + getCapacidade());
             Thread.sleep(10);
             this.capacidade -= 1;
         }
-        System.out.println("Capacidade Atual: " + this.capacidade);
+        System.out.println("Capacidade Atual: " + getCapacidade());
+    }
 
+    public int getResolucao() {
+        return resolucao;
+    }
+
+    public void definirResolucao(int resolucao){
+        setResolucao(resolucao);
+    }
+
+    private void setResolucao(int resolucao) {
+        if(resolucao >= 144){
+            this.resolucao = resolucao;
+        }else{
+            System.out.println("Resolução Mínima Aceita de 144p!!!");
+        }
+
+    }
+
+    public String getConectividade() {
+        return conectividade;
+    }
+
+    public int getCapacidade() {
+        return capacidade;
+    }
+
+    private void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
     }
 
     @Override
     public String toString() {
-        return "Camera{" +
+        return "Camera "+
                 "resolucao=" + resolucao +
                 ", capacidade=" + capacidade +
-                ", conectividade='" + conectividade + '\'' +
-                '}';
+                ", conectividade='" + conectividade + '\''
+                ;
     }
 }

@@ -8,27 +8,26 @@ import java.util.Scanner;
 public class SistemaPrincipal {
     public static void main(String[] args) throws InterruptedException {
         Scanner leitura = new Scanner(System.in);
-//        Passageiro passageiro1 = new Passageiro();
-//        passageiro1.nome = "Jurandir";
-//        passageiro1.saldo = 70.66;
-//
-//        Passageiro passageiro2 = new Passageiro();
-//        passageiro2.nome = "Paulo";
-//        passageiro2.saldo = 66.44;
-//
-//        // Exibindo os dados no Console
-//        System.out.println("--- Sistema FiapRide ---");
-//        System.out.println("Passageiro: " + passageiro1.nome + " | Saldo: R$" + passageiro1.saldo);
-//        System.out.println("Passageiro: " + passageiro2.nome + " | Saldo: R$" + passageiro2.saldo);
 
-        Camera camera1 = new Camera(720,500,"Wifi");
-        camera1.comecarFilmagem();
+        Passageiro passageiro1 = new Passageiro("Ana Silva", "222");
+        System.out.println("Regarga passageiro 1");
+        passageiro1.adicionarSaldo(50.0);
 
-        System.out.println("Deseja liberar espaço?(S/N): ");
-        String opcao = leitura.nextLine().toUpperCase();
-        if(opcao.equals("S")){
-            camera1.limparHd();
-        }
+
+        Passageiro passageiro2 = new Passageiro("Carlos Souza", "333");
+        System.out.println("Regarga passageiro 2");
+        passageiro2.adicionarSaldo(12.5);
+
+        System.out.println("--- Sistema FiapRide ---");
+        System.out.println("Passageiro: " + passageiro1.getNome() + " | Saldo: R$ " + passageiro1.getSaldo() + " | CPF: " + passageiro1.getCpf());
+        System.out.println("Passageiro: " + passageiro2.getNome() + " | Saldo: R$ " + passageiro2.getSaldo() + " | CPF: " + passageiro2.getCpf());
+
+        System.out.println("Pagando viagem do passageiro 1");
+        passageiro1.pagarViagem(20);
+        System.out.println("Pagando viagem do passageiro 2");
+        passageiro2.pagarViagem(20);
+
+
 
     }
 }
