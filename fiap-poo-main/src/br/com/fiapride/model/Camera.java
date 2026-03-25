@@ -8,10 +8,10 @@ public class Camera {
     private String conectividade;
 
 
-    public Camera(int capacidade, String conectividade){
-        this.resolucao = 0;
+    public Camera(int capacidade, String conectividade,int resolucao){
+        this.setResolucao(resolucao);
         this.capacidade = capacidade;
-        this.conectividade = conectividade;
+        this.setConectividade(conectividade);
     }
 
     public void limparHd(){
@@ -37,6 +37,14 @@ public class Camera {
 
     public void definirResolucao(int resolucao){
         setResolucao(resolucao);
+    }
+
+    public void setConectividade(String conectividade) {
+        if(!conectividade.isEmpty()){
+            this.conectividade = conectividade;
+        }else{
+            System.out.println("Insira a forma de conexão da Câmera!!!");
+        }
     }
 
     private void setResolucao(int resolucao) {

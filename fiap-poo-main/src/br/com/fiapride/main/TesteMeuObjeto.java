@@ -9,13 +9,8 @@ public class TesteMeuObjeto {
 
         Scanner leitura = new Scanner(System.in);
 
-        Camera camera1 = new Camera(500,"Wifi");
-        while (camera1.getResolucao() < 144){
-            System.out.print("Digite a resolução da camêra: ");
-            int resolucao = leitura.nextInt();
-            leitura.nextLine();
-            camera1.definirResolucao(resolucao);
-        }
+        Camera camera1 = new Camera(500,"Wifi",360);
+
         camera1.comecarFilmagem();
 
         System.out.print("Deseja liberar espaço?(S/N): ");
