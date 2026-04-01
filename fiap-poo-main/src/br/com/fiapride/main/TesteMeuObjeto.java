@@ -13,7 +13,7 @@ public class TesteMeuObjeto {
         Camera camera1 = new Camera(500,"Wifi",360);
 
         Gravacao grava1 = new Gravacao("Passeio","01/04/2026",35.25,camera1);
-
+g
         grava1.exibeResumo();
 //        camera1.comecarFilmagem();
 //
