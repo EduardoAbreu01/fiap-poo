@@ -6,7 +6,7 @@ public class Gravacao {
     private String data;
     private Camera camera;
 
-    public Gravacao(String titulo, String data, double tamanho,Camera camera) {
+    public Gravacao(String titulo, String data, double tamanho, Camera camera) {
         this.titulo = titulo;
         this.camera = camera;
         this.data = data;
