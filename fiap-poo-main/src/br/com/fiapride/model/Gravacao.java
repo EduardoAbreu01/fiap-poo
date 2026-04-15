@@ -4,11 +4,11 @@ public class Gravacao {
     private String titulo;
     private double tamanho;
     private String data;
-    private Camera camera;
+    private Audiovisual audiovisual;
 
-    public Gravacao(String titulo, String data, double tamanho, Camera camera) {
+    public Gravacao(String titulo, String data, double tamanho, Audiovisual audiovisual) {
         this.titulo = titulo;
-        this.camera = camera;
+        this.audiovisual = audiovisual;
         this.data = data;
         this.tamanho = tamanho;
 
@@ -19,8 +19,7 @@ public class Gravacao {
         System.out.println("---RESUMO DA GRAVAÇÂO---");
         System.out.println("Titulo: " + this.titulo + "\n" + "Data: " + this.data);
         System.out.println("Tamanho: " + this.tamanho + "\n"
-                + "Resolução: " + this.camera.getResolucao() +"\n"
-                + "Método de Salvamento: " + this.camera.getConectividade());
+                + "Resolução: " + this.audiovisual.getResolucao());
 
 
     }
